@@ -1,0 +1,193 @@
+/*https://stackoverflow.com/questions/12347701/why-transitions-for-some-css-properties-are-slow-and-none-fluent
+    Dont use left, top, bottom, margin, or padding properties to move elements,
+    only use transform: translate. or transform: scale for resize.
+    Left, top, bottom, margin, padding, height, width force the browser to recalulate
+    all the layout, so it becomes VERY laggy, especially the animations.
+*/
+
+html * {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.topnav {
+  overflow: hidden;
+}
+.topnav a {
+  text-decoration: none;
+}
+/* Dropdown content (hidden by default) */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  float: left;
+  width: 2%;
+  padding: 1%;
+  left: 20%;
+  top: 3%;
+}
+/* Links inside the dropdown */
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+/* Add a grey background color to dropdown links on hover */
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+img.navIcon {
+  float: left;
+  width: 2%;
+  padding: 1%;
+  left: 10%;
+  position: absolute;
+}
+/* top half of letters, there is black navigation bar. hover over and colors invert?*/
+
+img.logo {
+  float: none;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 10%;
+  color: black;
+}
+img {
+  opacity: 1;
+  transition: 1s ease;
+}
+img:hover {
+  /*transition: opacity 1s linear; placing transition here insetad of in h1.logo 
+    will make it so the transition only eases in, but once mouse no longer hovers, it INSTANTLY changes back instead of fading back in. */
+  opacity: 0.2;
+}
+img.git {
+  float: right;
+  width: 2%;
+  padding: 1%;
+  right: 10%;
+  position: absolute;
+}
+img.linkedin {
+  float: right;
+  padding: 1%;
+  width: 2%;
+  right: 13%;
+  position: absolute;
+}
+img.email {
+  float: right;
+  padding: 1%;
+  width: 2%;
+  right: 16%;
+  position: absolute;
+}
+div.header {
+  text-align: center;
+}
+.top {
+  text-align: center;
+}
+#particles-js {
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  background-image: url('');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  position: absolute;
+}
+.typing {
+  z-index: 1;
+  font-size: 6vw;
+  position: absolute;
+  top: 35%;
+}
+.scrollContainer {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+}
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #000;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/*
+#contact-header {
+  font-size: 4em;
+  position: absolute;
+  width: 100%;
+  bottom: -3em;
+  text-align: center;
+
+  
+}
+
+.contact-form {
+  position: absolute;
+  text-align: center;
+  left: 45%;
+  bottom: -30em;
+  padding-top: 25em;
+  padding-bottom: 25em;
+}
+*/
+
+
+
+
+
